@@ -4,11 +4,11 @@
   "description": "compatibility check of smart contracts",
   "author": "cLabs",
   "bin": {
-    "load-test": "./bin/run"
+    "contract-compatibility-check": "./bin/run"
   },
   "license": "Apache-2.0",
   "main": "dist/index.js",
-  "repository": "https://github.com/celo-org/stCelo-load-test",
+  "repository": "https://github.com/celo-org/contract-compatibility-check",
   "files": [
     "/bin",
     "/dist",
@@ -77,8 +77,8 @@
     "typescript": "^4.4.3"
   },
   "oclif": {
-    "bin": "load-test",
-    "dirname": "load-test",
+    "bin": "contract-compatibility-check",
+    "dirname": "contract-compatibility-check",
     "commands": "./dist/commands",
     "plugins": [
       "@oclif/plugin-help",
