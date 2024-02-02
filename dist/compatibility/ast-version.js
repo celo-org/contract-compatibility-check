@@ -47,7 +47,9 @@ async function getContractVersion(artifact) {
     const data = "0x" + abi.methodID("getVersionNumber", []).toString("hex");
     const nullAddress = "0000000000000000000000000000000000000000";
     // Artificially link all libraries to the null address.
-    const linkedBytecode = bytecode.split(/_+[\dA-Za-z]+_+/).join(nullAddress);
+    const linkedBytecodeFirst = bytecode.replace(/__\$.{34}\$__/g, nullAddress);
+    ;
+    const linkedBytecode = linkedBytecodeFirst.split(/_+[\dA-Za-z]+_+/).join(nullAddress);
     const result = await evm.runCall({
         to: util_1.Address.zero(),
         caller: util_1.Address.zero(),
